@@ -5,6 +5,7 @@ import com.extrieve.orderservice.dto.OrderRequest;
 import com.extrieve.orderservice.model.Order;
 import com.extrieve.orderservice.model.OrderLineItems;
 import com.extrieve.orderservice.repository.OrderRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +14,10 @@ import java.util.UUID;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor // Save time on creating the constructor manually.
 public class OrderService {
 
     private final OrderRepository orderRepository;
-
-    public OrderService(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
-    }
 
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
