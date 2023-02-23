@@ -22,5 +22,5 @@ public class Order {
 
     private String orderNumber;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<orderLineItems> orderLineItemsList;
+    private List<OrderLineItems> orderLineItemsList;
 }
