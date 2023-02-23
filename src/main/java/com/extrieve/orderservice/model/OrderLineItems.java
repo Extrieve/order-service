@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Table(name = "t_order_line_items")
-public class orderLineItems {
+public class OrderLineItems {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,5 +23,10 @@ public class orderLineItems {
     private String skuCode;
     private BigDecimal price;
     private Integer quantity;
+
+    @Override
+    public int hashCode(){
+        return getClass().hashCode();
+    }
 
 }
